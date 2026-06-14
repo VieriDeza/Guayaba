@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Poder Medicinal de las Hojas de Guayaba</title>
+  <style>
+
+  
+    :root {
+      --verde-oscuro:   #1a4a2e;
+      --verde-medio:    #2d7a4f;
+      --verde-claro:    #4caf7d;
+      --verde-suave:    #a8d5b5;
+      --verde-palido:   #e8f5ed;
+      --dorado:         #c8a84b;
+      --dorado-claro:   #f0d98a;
+      --blanco:         #ffffff;
+      --crema:          #faf9f5; 
+      --gris-texto:     #3a3a3a;
+      --gris-suave:     #7a7a7a;
+      --sombra:         0 4px 24px rgba(26,74,46,0.10);
+      --sombra-hover:   0 8px 40px rgba(26,74,46,0.18);
+      --radio:          14px;
+      --transicion:     0.35s cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: var(--crema);
+      color: var(--gris-texto);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* =============================================
+       TIPOGRAFÍA
+    ============================================= */
+    h1, h2, h3, h4 {
+      font-family: 'Georgia', serif;
+      line-height: 1.2;
+      color: var(--verde-oscuro);
+    }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+    h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); }
+    p  { font-size: clamp(0.95rem, 2vw, 1.05rem); color: var(--gris-texto); }
+
+    /* =============================================
+       SECCIONES BASE
+    ============================================= */
+    section { padding: 80px 0; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    .section-label {
+      display: inline-block;
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--verde-medio);
+      background: var(--verde-palido);
+      border: 1px solid var(--verde-suave);
+      padding: 4px 14px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      margin-bottom: 12px;
+    }
+    .section-title span {
+      color: var(--verde-medio);
+    }
+
+    .section-sub {
+      color: var(--gris-suave);
+      font-size: 1rem;
+      max-width: 600px;
+      margin-bottom: 48px;
+    }
+
+    .divider {
+      width: 64px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--verde-medio), var(--dorado));
+      border-radius: 2px;
+      margin: 16px 0 32px;
+    }
+
+    /* =============================================
+       ANIMACIONES SCROLL
+    ============================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* =============================================
+       NAV
+    ============================================= */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(26,74,46,0.97);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+      transition: background var(--transicion);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 62px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--blanco);
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+    }
+    .nav-brand .leaf { font-size: 1.4rem; }
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: all var(--transicion);
+    }
+    .nav-links a:hover {
+      color: var(--dorado-claro);
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--blanco);
+      border-radius: 2px;
+      transition: all var(--transicion);
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 62px;
+        left: 0;
+        width: 100%;
+        background: var(--verde-oscuro);
+        padding: 12px 0 20px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 24px; font-size: 0.9rem; border-radius: 0; }
+    }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    #inicio {
+      min-height: 100vh;
+      background:
+        linear-gradient(160deg, rgba(26,74,46,0.88) 0%, rgba(45,122,79,0.72) 55%, rgba(168,213,181,0.3) 100%),
+        url('./img/fondo_inicio.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding-top: 62px;
+    }
+    .hero-content {
+      max-width: 720px;
+    }
+    .hero-eyebrow {
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dorado-claro);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--dorado-claro);
+    }
+    .hero-title {
+      color: var(--blanco);
+      text-shadow: 0 2px 16px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+    }
+    .hero-title em {
+      color: var(--dorado-claro);
+      font-style: normal;
+    }
+    .hero-sub {
+      color: rgba(255,255,255,0.85);
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      margin-bottom: 40px;
+      max-width: 560px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--dorado);
+      color: var(--verde-oscuro);
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 50px;
+      transition: all var(--transicion);
+      box-shadow: 0 4px 20px rgba(200,168,75,0.4);
+    }
+    .btn-primary:hover {
+      background: var(--dorado-claro);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(200,168,75,0.5);
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    .hero-scroll svg { width: 20px; opacity: 0.7; }
+    @keyframes bounce {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+    #inicio { position: relative; }
+
+    /* =============================================
+       ¿QUÉ ES LA GUAYABA?
+    ============================================= */
+    #que-es { background: var(--blanco); }
+    .que-es-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .que-es-img {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      aspect-ratio: 4/3;
+    }
+    .que-es-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .que-es-img:hover img { transform: scale(1.04); }
+
+    .scientific-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--verde-palido);
+      border: 1px solid var(--verde-suave);
+      border-radius: 8px;
+      padding: 8px 16px;
+      margin-bottom: 24px;
+    }
+    .scientific-tag .icon { font-size: 1.1rem; }
+    .scientific-tag span {
+      font-style: italic;
+      color: var(--verde-oscuro);
+      font-size: 0.95rem;
+      font-weight: bold;
+    }
+
+    .info-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .chip {
+      background: var(--verde-palido);
+      color: var(--verde-oscuro);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.82rem;
+      font-family: 'Courier New', monospace;
+      border: 1px solid var(--verde-suave);
+    }
+
+    @media (max-width: 768px) {
+      .que-es-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* =============================================
+       PROPIEDADES MEDICINALES
+    ============================================= */
+    #propiedades { background: var(--verde-palido); }
+    .prop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .prop-card {
+      background: var(--blanco);
+      border-radius: var(--radio);
+      padding: 36px 28px;
+      box-shadow: var(--sombra);
+      transition: transform var(--transicion), box-shadow var(--transicion);
+      border-top: 4px solid var(--verde-claro);
+      position: relative;
+      overflow: hidden;
+    }
+    .prop-card::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 80px; height: 80px;
+      background: var(--verde-palido);
+      border-radius: 0 0 0 100%;
+    }
+    .prop-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sombra-hover);
+    }
+    .prop-icon {
+      font-size: 2.8rem;
+      margin-bottom: 18px;
+      display: block;
+    }
+    .prop-card h3 { margin-bottom: 10px; font-size: 1.15rem; }
+    .prop-card p  { font-size: 0.92rem; color: var(--gris-suave); }
+
+    @media (max-width: 768px) {
+      .prop-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 500px) and (max-width: 768px) {
+      .prop-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* =============================================
+       BENEFICIOS
+    ============================================= */
+    #beneficios { background: var(--blanco); }
+    .ben-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .ben-card {
+      background: linear-gradient(135deg, var(--verde-palido) 0%, var(--blanco) 100%);
+      border-radius: var(--radio);
+      padding: 28px 22px;
+      text-align: center;
+      box-shadow: var(--sombra);
+      border: 1px solid var(--verde-suave);
+      transition: transform var(--transicion), box-shadow var(--transicion);
+    }
+    .ben-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sombra-hover);
+    }
+    .ben-icon {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .ben-card h3 { font-size: 1rem; margin-bottom: 8px; }
+    .ben-card p  { font-size: 0.87rem; color: var(--gris-suave); line-height: 1.55; }
+
+    /* =============================================
+       PRODUCTOS
+    ============================================= */
+    #productos { background: var(--verde-oscuro); }
+    #productos .section-label { background: rgba(255,255,255,0.1); color: var(--dorado-claro); border-color: rgba(255,255,255,0.2); }
+    #productos .section-title { color: var(--blanco); }
+    #productos .section-title span { color: var(--dorado-claro); }
+    #productos .section-sub { color: rgba(255,255,255,0.65); }
+    #productos .divider { background: linear-gradient(90deg, var(--dorado-claro), var(--verde-claro)); }
+
+    .prod-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .prod-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radio);
+      padding: 28px 22px;
+      text-align: center;
+      transition: all var(--transicion);
+      cursor: default;
+    }
+    .prod-card:hover {
+      background: rgba(255,255,255,0.13);
+      transform: translateY(-4px);
+      border-color: var(--dorado);
+    }
+    .prod-emoji { font-size: 2.8rem; display: block; margin-bottom: 14px; }
+    .prod-card h3 { color: var(--blanco); font-size: 1rem; margin-bottom: 8px; }
+    .prod-card p  { color: rgba(255,255,255,0.6); font-size: 0.87rem; }
+    .prod-badge {
+      display: inline-block;
+      margin-top: 14px;
+      background: var(--dorado);
+      color: var(--verde-oscuro);
+      font-size: 0.72rem;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .prod-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .prod-grid { grid-template-columns: 1fr; }
+    }
+
+    /* =============================================
+       ELABORACIÓN (ACORDEONES)
+    ============================================= */
+    #elaboracion { background: var(--crema); }
+    .accordion-list { display: flex; flex-direction: column; gap: 14px; }
+    .accordion-item {
+      background: var(--blanco);
+      border-radius: var(--radio);
+      box-shadow: var(--sombra);
+      overflow: hidden;
+      border: 1px solid transparent;
+      transition: border-color var(--transicion);
+    }
+    .accordion-item.open { border-color: var(--verde-suave); }
+    .accordion-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      cursor: pointer;
+      user-select: none;
+      gap: 12px;
+    }
+    .accordion-header:hover { background: var(--verde-palido); }
+    .acc-left { display: flex; align-items: center; gap: 14px; }
+    .acc-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .acc-title { font-weight: bold; color: var(--verde-oscuro); font-size: 1rem; }
+    .acc-arrow {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: var(--verde-palido);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: transform var(--transicion), background var(--transicion);
+    }
+    .accordion-item.open .acc-arrow { transform: rotate(180deg); background: var(--verde-medio); }
+    .acc-arrow svg { width: 13px; stroke: var(--verde-oscuro); }
+    .accordion-item.open .acc-arrow svg { stroke: var(--blanco); }
+    .accordion-body {
+      display: none;
+      padding: 0 24px 24px;
+      border-top: 1px solid var(--verde-palido);
+    }
+    .accordion-item.open .accordion-body { display: block; }
+    .acc-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px; }
+    .acc-col h4 { color: var(--verde-medio); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; font-family: 'Courier New', monospace; }
+    .acc-col ul { list-style: none; }
+    .acc-col ul li {
+      padding: 5px 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--verde-palido);
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .acc-col ul li::before { content: '→'; color: var(--verde-claro); flex-shrink: 0; }
+
+    @media (max-width: 600px) {
+      .acc-cols { grid-template-columns: 1fr; }
+    }
+
+    /* =============================================
+       RESULTADOS (CSS CHARTS)
+    ============================================= */
+    #resultados { background: var(--blanco); }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .result-card {
+      background: var(--verde-palido);
+      border-radius: var(--radio);
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: var(--sombra);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Circular progress using conic-gradient */
+    .circle-chart {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .circle-chart::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: conic-gradient(var(--verde-medio) 0% var(--pct), #dce9e0 var(--pct) 100%);
+    }
+    .circle-chart::after {
+      content: '';
+      position: absolute;
+      inset: 18px;
+      background: var(--verde-palido);
+      border-radius: 50%;
+    }
+    .circle-inner {
+      position: relative;
+      z-index: 1;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--verde-oscuro);
+      line-height: 1;
+    }
+    .circle-inner small { display: block; font-size: 0.75rem; color: var(--gris-suave); font-weight: normal; font-family: 'Courier New', monospace; }
+    .result-card h3 { font-size: 1rem; margin-bottom: 8px; }
+    .result-card p  { font-size: 0.87rem; color: var(--gris-suave); }
+
+    @media (max-width: 768px) {
+      .results-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 500px) and (max-width: 768px) {
+      .results-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* =============================================
+       CONCLUSIONES
+    ============================================= */
+    #conclusiones { background: var(--verde-palido); }
+    .conc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .conc-item {
+      background: var(--blanco);
+      border-radius: var(--radio);
+      padding: 26px 22px;
+      box-shadow: var(--sombra);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .conc-num {
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      background: var(--verde-oscuro);
+      color: var(--blanco);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+    .conc-item p { font-size: 0.93rem; color: var(--gris-texto); padding-top: 8px; }
+
+    @media (max-width: 600px) {
+      .conc-grid { grid-template-columns: 1fr; }
+    }
+
+    /* =============================================
+       GALERÍA
+    ============================================= */
+    #galeria { background: var(--blanco); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: var(--sombra);
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(26,74,46,0.75) 100%);
+      opacity: 0;
+      transition: opacity var(--transicion);
+      display: flex; align-items: flex-end; padding: 14px;
+    }
+    .gallery-item:hover .overlay { opacity: 1; }
+    .overlay span {
+      color: var(--blanco);
+      font-size: 0.85rem;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* =============================================
+       REFERENCIAS
+    ============================================= */
+    #referencias { background: var(--crema); }
+    .ref-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .ref-list li {
+      background: var(--blanco);
+      border-radius: 10px;
+      padding: 16px 20px;
+      box-shadow: var(--sombra);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      border-left: 4px solid var(--verde-claro);
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .ref-num {
+      flex-shrink: 0;
+      color: var(--verde-medio);
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      font-weight: bold;
+      padding-top: 2px;
+    }
+    .ref-list em { color: var(--verde-oscuro); font-style: normal; font-weight: bold; }
+
+    /* =============================================
+       CONTACTO Y CRÉDITOS
+    ============================================= */
+    #contacto { background: var(--verde-oscuro); }
+    #contacto .section-label { background: rgba(255,255,255,0.1); color: var(--dorado-claro); border-color: rgba(255,255,255,0.2); }
+    #contacto .section-title { color: var(--blanco); }
+    #contacto .section-title span { color: var(--dorado-claro); }
+    #contacto .divider { background: linear-gradient(90deg, var(--dorado-claro), var(--verde-claro)); }
+
+    .credits-card {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 20px;
+      padding: 48px 40px;
+    }
+    .credits-avatar {
+      width: 80px; height: 80px;
+      background: linear-gradient(135deg, var(--dorado), var(--verde-claro));
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.4rem;
+    }
+    .credits-name {
+      font-size: 1.4rem;
+      color: var(--blanco);
+      margin-bottom: 6px;
+    }
+    .credits-role {
+      color: var(--dorado-claro);
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .credits-divider {
+      width: 40px; height: 1px;
+      background: rgba(255,255,255,0.2);
+      margin: 20px auto;
+    }
+    .credits-detail {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .credits-detail strong { color: rgba(255,255,255,0.85); }
+
+    /* =============================================
+       CÓDIGO QR
+    ============================================= */
+    #qr { background: var(--verde-palido); }
+    .qr-box {
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: center;
+      background: var(--blanco);
+      border-radius: 20px;
+      padding: 48px 40px;
+      box-shadow: var(--sombra);
+    }
+    .qr-placeholder {
+      width: 200px; height: 200px;
+      margin: 0 auto 24px;
+      border: 3px dashed var(--verde-suave);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: var(--verde-medio);
+      font-size: 3.5rem;
+    }
+    .qr-placeholder p {
+      font-size: 0.78rem;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gris-suave);
+    }
+    .qr-box h3 { margin-bottom: 10px; }
+    .qr-box > p { font-size: 0.9rem; color: var(--gris-suave); }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: #111;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      padding: 24px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+    }
+    footer span { color: var(--verde-claro); }
+
+    /* =============================================
+       SCROLL TO TOP
+    ============================================= */
+    #scrollTop {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 44px; height: 44px;
+      background: var(--verde-oscuro);
+      color: var(--blanco);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all var(--transicion);
+      z-index: 900;
+    }
+    #scrollTop.visible { opacity: 1; transform: translateY(0); }
+    #scrollTop:hover { background: var(--verde-medio); }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAV ==================== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#inicio" class="nav-brand">
+        <span class="leaf">🌿</span>
+        Hojas de Guayaba
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#que-es">Planta</a></li>
+        <li><a href="#propiedades">Propiedades</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#elaboracion">Elaboración</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Créditos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="inicio">
+    <div class="container">
+      <div class="hero-content reveal">
+        <p class="hero-eyebrow">Investigación Escolar · Ciencia y Tecnología</p>
+        <h1 class="hero-title">
+          El Poder <em>Medicinal</em><br>de las Hojas de<br>Guayaba
+        </h1>
+        <p class="hero-sub">
+          Descubre cómo la naturaleza nos ofrece un remedio ancestral con propiedades antibacterianas, antiinflamatorias y antioxidantes, presente en una sola hoja.
+        </p>
+        <a href="#beneficios" class="btn-primary">
+          <span>Explorar Beneficios</span>
+          <span>↓</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      Desplazar
+    </div>
+  </section> 
+
+  <!-- ==================== QUÉ ES ==================== -->
+  <section id="que-es">
+    <div class="container">
+      <div class="que-es-grid">
+        <div class="que-es-img reveal">
+          <img
+            src="./img/wayabana.png"
+            alt="Hojas verdes de guayaba en rama"
+            loading="lazy"
+          />  
+        </div>
+        <div class="reveal reveal-delay-1">
+          <span class="section-label">La Planta</span>
+          <h2 class="section-title">¿Qué es la <span>Guayaba</span>?</h2>
+          <div class="divider"></div>
+
+          <div class="scientific-tag">
+            <span class="icon">🔬</span>
+            <span>Psidium guajava L.</span>
+          </div>
+
+          <p>La guayaba es un árbol tropical de la familia <em>Myrtaceae</em>, originario de América Central y ampliamente distribuido en regiones tropicales y subtropicales del mundo. Alcanza entre 3 y 10 metros de altura y produce frutos redondos de intenso aroma.</p>
+          <br>
+          <p>Sus <strong>hojas son las más valoradas medicinalmente</strong>: ricas en flavonoides, taninos, ácidos triterpénicos y aceites esenciales que les otorgan un extraordinario potencial terapéutico reconocido tanto por la medicina tradicional como por estudios científicos modernos.</p>
+          <br>
+          <p>En el Perú y en toda Latinoamérica, las hojas de guayaba forman parte de la medicina natural ancestral, utilizadas durante siglos para tratar desde afecciones digestivas hasta infecciones cutáneas.</p>
+
+          <div class="info-chips">
+            <span class="chip">🌎 Origen tropical</span>
+            <span class="chip">🍃 Rica en flavonoides</span>
+            <span class="chip">🏥 Uso medicinal milenario</span>
+            <span class="chip">⚗️ Avales científicos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROPIEDADES ==================== -->
+  <section id="propiedades">
+    <div class="container">
+      <span class="section-label">Ciencia</span>
+      <h2 class="section-title reveal">Propiedades <span>Medicinales</span></h2>
+      <div class="divider reveal"></div>
+      <p class="section-sub reveal">Las hojas de guayaba concentran compuestos bioactivos que han sido estudiados y validados científicamente.</p>
+
+      <div class="prop-grid">
+        <div class="prop-card reveal reveal-delay-1">
+          <span class="prop-icon">🛡️</span>
+          <h3>Antibacteriana</h3>
+          <p>Los taninos y flavonoides presentes en las hojas inhiben el crecimiento de bacterias como <em>Staphylococcus aureus</em> y <em>E. coli</em>, siendo especialmente eficaces en infecciones bucales y gastrointestinales.</p>
+        </div>
+        <div class="prop-card reveal reveal-delay-2">
+          <span class="prop-icon">❄️</span>
+          <h3>Antiinflamatoria</h3>
+          <p>Los compuestos triterpénicos y ácido guayavólico reducen la respuesta inflamatoria del organismo, aliviando dolores articulares, hinchazones y afecciones dérmicas de manera natural y sin efectos secundarios.</p>
+        </div>
+        <div class="prop-card reveal reveal-delay-3">
+          <span class="prop-icon">✨</span>
+          <h3>Antioxidante</h3>
+          <p>Con alta concentración de vitamina C, quercetina y licopeno, las hojas neutralizan los radicales libres, retardando el envejecimiento celular y reduciendo el riesgo de enfermedades crónicas degenerativas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BENEFICIOS ==================== -->
+  <section id="beneficios">
+    <div class="container">
+      <span class="section-label">Aplicaciones</span>
+      <h2 class="section-title reveal">Beneficios para la <span>Salud</span></h2>
+      <div class="divider reveal"></div>
+      <p class="section-sub reveal">Una hoja, múltiples soluciones naturales para el bienestar diario.</p>
+
+      <div class="ben-grid">
+        <div class="ben-card reveal reveal-delay-1">
+          <span class="ben-icon">🫁</span>
+          <h3>Salud Digestiva</h3>
+          <p>Alivia la diarrea, reduce los calambres abdominales y combate parásitos intestinales gracias a sus taninos astringentes que regulan la flora intestinal.</p>
+        </div>
+        <div class="ben-card reveal reveal-delay-2">
+          <span class="ben-icon">🦷</span>
+          <h3>Salud Bucal</h3>
+          <p>Reduce la placa bacteriana, combate la gingivitis y alivia el dolor de muelas. Su efecto antimicrobiano mantiene la cavidad bucal libre de patógenos.</p>
+        </div>
+        <div class="ben-card reveal reveal-delay-3">
+          <span class="ben-icon">💇</span>
+          <h3>Cuidado Capilar</h3>
+          <p>Estimula el crecimiento del cabello, fortalece el folículo piloso, reduce la caspa y controla el exceso de grasa en el cuero cabelludo.</p>
+        </div>
+        <div class="ben-card reveal reveal-delay-1">
+          <span class="ben-icon">🌸</span>
+          <h3>Cuidado de la Piel</h3>
+          <p>Trata el acné, cicatriza heridas menores, aclara manchas e hidrata gracias a sus antioxidantes que regeneran el tejido cutáneo dañado.</p>
+        </div>
+        <div class="ben-card reveal reveal-delay-2">
+          <span class="ben-icon">🧴</span>
+          <h3>Higiene Personal</h3>
+          <p>Sus propiedades antibacterianas y su aroma natural la hacen ideal para elaborar productos de higiene personal seguros, libres de químicos agresivos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCTOS ==================== -->
+  <section id="productos">
+    <div class="container">
+      <span class="section-label">Elaboración Natural</span>
+      <h2 class="section-title reveal">Productos <span>Elaborados</span></h2>
+      <div class="divider reveal"></div>
+      <p class="section-sub reveal">Productos naturales, artesanales y libres de químicos industriales, elaborados con hojas de guayaba.</p>
+
+      <div class="prod-grid">
+        <div class="prod-card reveal reveal-delay-1">
+          <span class="prod-emoji">🍵</span>
+          <h3>Té Filtrante</h3>
+          <p>Infusión concentrada lista para consumir, ideal para problemas digestivos y refuerzo inmunológico.</p>
+          <span class="prod-badge">Oral</span>
+        </div>
+        <div class="prod-card reveal reveal-delay-2">
+          <span class="prod-emoji">🦷</span>
+          <h3>Pasta Dental Natural</h3>
+          <p>Limpieza bucal profunda con efecto antibacteriano sin flúor ni conservantes artificiales.</p>
+          <span class="prod-badge">Bucal</span>
+        </div>
+        <div class="prod-card reveal reveal-delay-3">
+          <span class="prod-emoji">💧</span>
+          <h3>Infusión Medicinal</h3>
+          <p>Concentrado líquido de uso múltiple para aplicación tópica o ingesta terapéutica.</p>
+          <span class="prod-badge">Medicinal</span>
+        </div>
+        <div class="prod-card reveal reveal-delay-1">
+          <span class="prod-emoji">🌿</span>
+          <h3>Desodorante Natural</h3>
+          <p>Control del olor corporal de larga duración, sin aluminio ni irritantes para la piel sensible.</p>
+          <span class="prod-badge">Corporal</span>
+        </div>
+        <div class="prod-card reveal reveal-delay-2">
+          <span class="prod-emoji">✨</span>
+          <h3>Mascarilla Facial</h3>
+          <p>Tratamiento antiacné y renovador celular que hidrata y unifica el tono de la piel.</p>
+          <span class="prod-badge">Piel</span>
+        </div>
+        <div class="prod-card reveal reveal-delay-3">
+          <span class="prod-emoji">💆</span>
+          <h3>Tónico Capilar</h3>
+          <p>Fortalece el cabello desde la raíz, estimula el crecimiento y controla la caspa.</p>
+          <span class="prod-badge">Capilar</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- ==================== ELABORACIÓN ==================== -->
+  <section id="elaboracion">
+    <div class="container">
+      <span class="section-label">Paso a Paso</span>
+      <h2 class="section-title reveal">Cómo <span>Elaborarlos</span></h2>
+      <div class="divider reveal"></div>
+      <p class="section-sub reveal">Guía de materiales y preparación para cada producto natural. Haz clic para expandir.</p>
+
+      <div class="accordion-list reveal">
+
+        <!-- PASTA DENTAL -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="acc-left">
+              <span class="acc-icon">🦷</span>
+              <span class="acc-title">Pasta Dental Natural</span>
+            </div>
+            <div class="acc-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="accordion-body">
+            <div class="acc-cols">
+              <div class="acc-col">
+                <h4>Materiales</h4>
+                <ul>
+                  <li>5 a 6 hojas de guayaba frescas y limpias</li>
+                  <li>1/2 taza de bicarbonato de sodio</li>
+                  <li>1 cucharada de aceite de coco</li>
+                  <li>1 cucharada de glicerina vegetal</li>
+                  <li>Agua purificada</li>
+                </ul>
+              </div>
+              <div class="acc-col">
+                <h4>Preparación</h4>
+                <ul>
+                  <li>Hervir las hojas en 1/2 taza de agua por 10–15 min, enfriar y colar</li>
+                  <li>Mezclar bicarbonato, aceite de coco y glicerina vegetal</li>
+                  <li>Agregar gradualmente la infusión hasta obtener pasta homogénea</li>
+                  <li>Envasar en recipiente limpio y conservar en lugar fresco</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INFUSIÓN MEDICINAL -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="acc-left">
+              <span class="acc-icon">💧</span>
+              <span class="acc-title">Infusión Medicinal de Hoja de Guayaba</span>
+            </div>
+            <div class="acc-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="accordion-body">
+            <p style="font-size:0.88rem;color:var(--gris-suave);margin:12px 0 16px;">Preparado natural utilizado como enjuague bucal, enjuague capilar y para higiene íntima externa.</p>
+            <div class="acc-cols">
+              <div class="acc-col">
+                <h4>Materiales</h4>
+                <ul>
+                  <li>15 hojas de guayaba frescas</li>
+                  <li>1 litro de agua</li>
+                  <li>Olla</li>
+                  <li>Colador</li>
+                  <li>Frasco de almacenamiento</li>
+                </ul>
+              </div>
+              <div class="acc-col">
+                <h4>Preparación</h4>
+                <ul>
+                  <li>Lavar cuidadosamente las hojas de guayaba</li>
+                  <li>Hervir un litro de agua</li>
+                  <li>Agregar las hojas y hervir 15 a 20 minutos</li>
+                  <li>Retirar del fuego y dejar enfriar</li>
+                  <li>Colar y envasar en recipiente limpio</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TÉ FILTRANTE -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="acc-left">
+              <span class="acc-icon">🍵</span>
+              <span class="acc-title">Té Filtrante de Hoja de Guayaba</span>
+            </div>
+            <div class="acc-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="accordion-body">
+            <div class="acc-cols">
+              <div class="acc-col">
+                <h4>Materiales</h4>
+                <ul>
+                  <li>Hojas de guayaba secas</li>
+                  <li>Bolsitas filtrantes vacías</li>
+                  <li>Tijeras</li>
+                  <li>Recipiente hermético</li>
+                </ul>
+              </div>
+              <div class="acc-col">
+                <h4>Preparación</h4>
+                <ul>
+                  <li>Lavar las hojas de guayaba</li>
+                  <li>Dejarlas secar a la sombra durante varios días</li>
+                  <li>Triturar ligeramente las hojas secas</li>
+                  <li>Colocar una porción en cada bolsita y sellar</li>
+                  <li>Guardar en recipiente hermético</li>
+                </ul>
+              </div>
+            </div>
+            <div style="margin-top:16px;padding:14px 16px;background:var(--verde-palido);border-radius:8px;border-left:3px solid var(--verde-claro);">
+              <h4 style="color:var(--verde-medio);font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;font-family:'Courier New',monospace;margin-bottom:8px;">☕ Modo de Consumo</h4>
+              <p style="font-size:0.88rem;color:var(--gris-texto);">Colocar una bolsita en una taza de agua caliente y dejar reposar entre 5 y 10 minutos antes de consumir.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DESODORANTE -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="acc-left">
+              <span class="acc-icon">🌿</span>
+              <span class="acc-title">Desodorante Natural de Hoja de Guayaba</span>
+            </div>
+            <div class="acc-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="accordion-body">
+            <div class="acc-cols">
+              <div class="acc-col">
+                <h4>Materiales</h4>
+                <ul>
+                  <li>10 hojas de guayaba</li>
+                  <li>1 taza de agua</li>
+                  <li>1 cucharada de bicarbonato de sodio</li>
+                  <li>Frasco con atomizador</li>
+                </ul>
+              </div>
+              <div class="acc-col">
+                <h4>Preparación</h4>
+                <ul>
+                  <li>Hervir las hojas en una taza de agua por 15 minutos</li>
+                  <li>Dejar enfriar y colar</li>
+                  <li>Agregar el bicarbonato y mezclar bien</li>
+                  <li>Verter en atomizador limpio</li>
+                  <li>Conservar en lugar fresco</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MASCARILLA -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="acc-left">
+              <span class="acc-icon">✨</span>
+              <span class="acc-title">Mascarilla Facial de Hoja de Guayaba</span>
+            </div>
+            <div class="acc-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="accordion-body">
+            <div class="acc-cols">
+              <div class="acc-col">
+                <h4>Materiales</h4>
+                <ul>
+                  <li>8 hojas de guayaba frescas</li>
+                  <li>1 cucharada de miel</li>
+                  <li>Mortero o licuadora</li>
+                </ul>
+              </div>
+              <div class="acc-col">
+                <h4>Preparación</h4>
+                <ul>
+                  <li>Lavar las hojas de guayaba</li>
+                  <li>Triturarlas hasta obtener una pasta</li>
+                  <li>Mezclar con la miel</li>
+                  <li>Aplicar sobre el rostro limpio</li>
+                  <li>Dejar actuar 15 a 20 minutos</li>
+                  <li>Retirar con abundante agua</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /accordion-list -->
+    </div>
+  </section>
+
+  <!-- ==================== RESULTADOS ==================== -->
+  <section id="resultados">
+    <div class="container">
+      <span class="section-label">Datos del Estudio</span>
+      <h2 class="section-title reveal">Resultados de la <span>Investigación</span></h2>
+      <div class="divider reveal"></div>
+      <p class="section-sub reveal">Encuesta aplicada a una muestra de la comunidad estudiantil sobre el conocimiento y uso de las hojas de guayaba.</p>
+
+      <div class="results-grid">
+        <!-- 70% desconocía -->
+        <div class="result-card reveal reveal-delay-1">
+          <div class="circle-chart" style="--pct: 70%">
+            <div class="circle-inner">70%<small>encuestados</small></div>
+          </div>
+          <h3>Desconocían los Beneficios</h3>
+          <p>La mayoría de participantes no tenía conocimiento previo sobre las propiedades medicinales de las hojas de guayaba.</p>
+        </div>
+        <!-- 100% útil -->
+        <div class="result-card reveal reveal-delay-2">
+          <div class="circle-chart" style="--pct: 100%">
+            <div class="circle-inner">100%<small>de acuerdo</small></div>
+          </div>
+          <h3>Consideran Útiles los Productos</h3>
+          <p>El total de encuestados valoró positivamente los productos naturales elaborados con hojas de guayaba presentados en el estudio.</p>
+        </div>
+        <!-- 100% usaría -->
+        <div class="result-card reveal reveal-delay-3">
+          <div class="circle-chart" style="--pct: 100%">
+            <div class="circle-inner">100%<small>dispuestos</small></div>
+          </div>
+          <h3>Usarían los Productos</h3>
+          <p>Todos los participantes manifestaron su disposición a incorporar productos naturales de guayaba como alternativa a los convencionales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONCLUSIONES ==================== -->
+  <section id="conclusiones">
+    <div class="container">
+      <span class="section-label">Hallazgos</span>
+      <h2 class="section-title reveal">Conclusiones del <span>Estudio</span></h2>
+      <div class="divider reveal"></div>
+      <p class="section-sub reveal">Los resultados confirman el valor científico y social del aprovechamiento medicinal de la hoja de guayaba.</p>
+
+      <div class="conc-grid">
+        <div class="conc-item reveal reveal-delay-1">
+          <div class="conc-num">01</div>
+          <p>Las hojas de <em>Psidium guajava</em> poseen propiedades antibacterianas, antiinflamatorias y antioxidantes respaldadas científicamente, con potencial terapéutico comparable al de fármacos de uso cotidiano.</p>
+        </div>
+        <div class="conc-item reveal reveal-delay-2">
+          <div class="conc-num">02</div>
+          <p>Es posible elaborar productos naturales de higiene y salud a bajo costo utilizando hojas de guayaba, lo que representa una alternativa accesible y sostenible para comunidades con recursos limitados.</p>
+        </div>
+        <div class="conc-item reveal reveal-delay-3">
+          <div class="conc-num">03</div>
+          <p>El desconocimiento generalizado (70%) sobre los beneficios de esta planta evidencia la necesidad de programas de difusión sobre medicina natural y plantas medicinales en el ámbito escolar y comunitario.</p>
+        </div>
+        <div class="conc-item reveal reveal-delay-4">
+          <div class="conc-num">04</div>
+          <p>La aceptación unánime (100%) de los productos por parte de la muestra demuestra una alta disposición social hacia alternativas naturales y ecológicas frente a los productos comerciales convencionales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GALERÍA ==================== -->
+  <section id="galeria">
+    <div class="container">
+      <span class="section-label">Imágenes</span>
+      <h2 class="section-title reveal">Galería <span>Fotográfica</span></h2>
+      <div class="divider reveal"></div>
+      <p class="section-sub reveal">Imágenes de referencia del proyecto. Reemplázalas con las fotos originales de tu investigación.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500&q=75" alt="Hojas verdes de guayaba" loading="lazy"/>
+          <div class="overlay"><span>Hojas frescas</span></div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-2">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=75" alt="Taza de té herbal" loading="lazy"/>
+          <div class="overlay"><span>Té medicinal</span></div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-3">
+          <img src="https://images.unsplash.com/photo-1607008829749-c0f284a49fc4?w=500&q=75" alt="Productos naturales" loading="lazy"/>
+          <div class="overlay"><span>Productos elaborados</span></div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=500&q=75" alt="Plantas medicinales" loading="lazy"/>
+          <div class="overlay"><span>Planta medicinal</span></div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-2">
+          <img src="https://images.unsplash.com/photo-1526887520775-4b14b8aed897?w=500&q=75" alt="Preparación herbal" loading="lazy"/>
+          <div class="overlay"><span>Proceso de elaboración</span></div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-3">
+          <img src="https://images.unsplash.com/photo-1609501676725-7186f7fae4ba?w=500&q=75" alt="Investigación escolar" loading="lazy"/>
+          <div class="overlay"><span>Investigación</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== REFERENCIAS ==================== -->
+  <section id="referencias">
+    <div class="container">
+      <span class="section-label">Fuentes Académicas</span>
+      <h2 class="section-title reveal">Referencias <span>Bibliográficas</span></h2>
+      <div class="divider reveal"></div>
+
+      <ul class="ref-list reveal">
+  <li>
+    <span class="ref-num">[1]</span>
+    <span>
+      Gutiérrez, R. M. P., Mitchell, S., & Solis, R. V. (2008).
+      <em>Psidium guajava: A review of its traditional uses, phytochemistry and pharmacology.</em>
+      <strong>Journal of Ethnopharmacology</strong>, 117(1), 1–27.
+      <a href="https://doi.org/10.1016/j.jep.2008.01.025" target="_blank">
+        https://doi.org/10.1016/j.jep.2008.01.025
+      </a>
+    </span>
+  </li>
+
+  <li>
+    <span class="ref-num">[2]</span>
+    <span>
+      Kumar, M., Tomar, M., Amarowicz, R., Saurabh, V., Nair, M. S.,
+      Maheshwari, C., Sasi, M., Prajapati, U., Hasan, M., Singh, S.,
+      Changan, S., & Prajapati, B. G. (2021).
+      <em>Guava (Psidium guajava L.) leaves: Nutritional composition, phytochemical profile, and health-promoting bioactivities.</em>
+      <strong>Foods</strong>, 10(4), 752.
+      <a href="https://doi.org/10.3390/foods10040752" target="_blank">
+        https://doi.org/10.3390/foods10040752
+      </a>
+    </span>
+  </li>
+
+  <li>
+    <span class="ref-num">[3]</span>
+    <span>
+      Naseer, S., Hussain, S., Naeem, N., Pervaiz, M., & Rahman, M. (2018).
+      <em>The phytochemistry and medicinal value of Psidium guajava (guava).</em>
+      <strong>Clinical Phytoscience</strong>, 4(32).
+      <a href="https://doi.org/10.1186/s40816-018-0093-8" target="_blank">
+        https://doi.org/10.1186/s40816-018-0093-8
+      </a>
+    </span>
+  </li>
+</ul>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACTO / CRÉDITOS ==================== -->
+  <section id="contacto">
+    <div class="container" style="text-align:center">
+      <span class="section-label">Autora</span>
+      <h2 class="section-title reveal">Créditos del <span>Proyecto</span></h2>
+      <div class="divider reveal" style="margin:16px auto 32px"></div>
+
+      <div class="credits-card reveal">
+        <div class="credits-avatar">🌿</div>
+        <h2 class="credits-name">Akemi Sayuri Marreros Carranza</h2>
+        <p class="credits-role">Investigadora · Autora del Proyecto</p>
+        <div class="credits-divider"></div>
+        <p class="credits-detail">
+          <strong>Proyecto escolar de Ciencia y Tecnología</strong><br>
+          Área: Ciencia y Tecnología · Feria Científica Escolar<br><br>
+          Investigación sobre las propiedades medicinales y aplicaciones<br>
+          prácticas de las hojas de <em>Psidium guajava</em> en productos<br>
+          naturales de higiene y salud.<br><br>
+          <strong>País:</strong> Perú &nbsp;|&nbsp; <strong>Año:</strong> 2026
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CÓDIGO QR ==================== -->
+  <section id="qr">
+    <div class="container">
+      <div style="text-align:center; margin-bottom: 32px;" class="reveal">
+        <span class="section-label">Acceso Digital</span>
+        <h2 class="section-title" style="margin-bottom:6px">Código <span>QR</span></h2>
+        <div class="divider" style="margin: 12px auto 0"></div>
+      </div>
+
+      <div class="qr-box reveal">
+        <div class="qr-placeholder">
+          <span>▦</span>
+          <p>QR aquí</p>
+        </div>
+        <h3>Escanea para visitar este sitio</h3>
+        <p></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <p>
+      © 2026 · <span>El Poder Medicinal de las Hojas de Guayaba</span> ·
+      Akemi Sayuri Marreros Carranza · Proyecto Escolar de Ciencia y Tecnología
+    </p>
+  </footer>
+
+  <!-- SCROLL TO TOP BUTTON -->
+  <button id="scrollTop" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <!-- =============================================
+       JAVASCRIPT
+  ============================================= -->
+  <script>
+    /* ---- NAV TOGGLE (móvil) ---- */
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    // Cerrar al hacer clic en un enlace
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    /* ---- SCROLL REVEAL ---- */
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    /* ---- SCROLL TO TOP ---- */
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+
+    /* ---- ACORDEONES ---- */
+    function toggleAccordion(header) {
+      const item = header.parentElement;
+      const isOpen = item.classList.contains('open');
+      // Cerrar todos
+      document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+      // Abrir el clickeado si estaba cerrado
+      if (!isOpen) item.classList.add('open');
+    }
+
+    /* ---- ACTIVE NAV LINK en scroll ---- */
+    const sections = document.querySelectorAll('section[id]');
+    const navAs = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navAs.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current
+          ? 'var(--dorado-claro)'
+          : '';
+      });
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
